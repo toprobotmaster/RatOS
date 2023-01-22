@@ -19,4 +19,4 @@ echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/deb
 apt update && apt install nodejs yarn -y 
 
 #debug - trying this to get around network errors?
-yarn config set network-timeout 600000
+yarn config set network-timeout 1200000
