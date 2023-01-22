@@ -3,7 +3,8 @@
 # shellcheck enable=require-variable-braces
 
 BASE_ARCH="arm64"
-
+BASE_IMAGE_ENLARGEROOT=10500
+BASE_IMAGE_RESIZEROOT=600
 BASE_ADD_USER="yes"
 BASE_USER="pi"
 BASE_USER_PASSWORD="raspberry"
@@ -14,6 +15,8 @@ DOWNLOAD_URL_IMAGE="https://github.com/bigtreetech/CB1/releases/download/V2.2.1/
 
 # export Variables
 export BASE_ARCH
+export BASE_IMAGE_ENLARGEROOT
+export BASE_IMAGE_RESIZEROOT
 export DOWNLOAD_URL_CHECKSUM
 export DOWNLOAD_URL_IMAGE
 
