@@ -25,7 +25,7 @@ echo_green "Copying temporary file ..."
 unpack /filesystem/tmp /tmp root
 
 # since PICONFIG_CONFIG_TXT_FILE only exists on raspberry pi os
-if [[ $BASE_DISTRO != "armbian" ]]; then
+if [ "${BASE_DISTRO}" != "armbian" ]; then
   echo_green "Merge MainsailOS configuration with default config.txt ..."
   # Step 2: Copy default config to "/tmp"
   cp "${PICONFIG_CONFIG_TXT_FILE}" /tmp
