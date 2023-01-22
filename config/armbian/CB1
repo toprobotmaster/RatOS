@@ -3,10 +3,12 @@
 # shellcheck enable=require-variable-braces
 
 BASE_ARCH="arm64"
+BASE_DISTRO="armbian"
+BASE_IMAGE_RASPBIAN="no"
 
-#BASE_ADD_USER="yes"
-#BASE_USER="pi"
-#BASE_USER_PASSWORD="raspberry"
+BASE_ADD_USER="yes"
+BASE_USER="pi"
+BASE_USER_PASSWORD="raspberry"
 
 # Image source
 DOWNLOAD_URL_CHECKSUM="https://github.com/jscancella/RatOS/releases/download/cb1-checksum/CB1_Debian11_bullseye_Klipper_kernel5.16_20221110.img.sha256"
@@ -16,5 +18,7 @@ DOWNLOAD_URL_IMAGE="https://github.com/bigtreetech/CB1/releases/download/V2.2.1/
 export BASE_ARCH
 export DOWNLOAD_URL_CHECKSUM
 export DOWNLOAD_URL_IMAGE
+export BASE_DISTRO
+export BASE_IMAGE_RASPBIAN
 
 export MODULES="base,pkgupgrade(network,piconfig,klipper,node,is_req_preinstall,moonraker,mainsail,crowsnest,opiconfig,ratos(linear_movement_analysis,timelapse,klipperscreen,rpi_mcu,disable-services(hotspot),dfu-util),password-for-sudo),postrename"
