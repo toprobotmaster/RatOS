@@ -24,21 +24,25 @@ install_cleanup_trap
 echo_green "Copying temporary file ..."
 unpack /filesystem/tmp /tmp root
 
-echo_green "Merge MainsailOS configuration with default config.txt ..."
-# Step 2: Copy default config to "/tmp"
-cp "${PICONFIG_CONFIG_TXT_FILE}" /tmp
+# since PICONFIG_CONFIG_TXT_FILE only exists on raspberry pi os
+if [ $BASE_DISTRO != "arbian" ]
+then
+  echo_green "Merge MainsailOS configuration with default config.txt ..."
+  # Step 2: Copy default config to "/tmp"
+  cp "${PICONFIG_CONFIG_TXT_FILE}" /tmp
 
-# Step 3: Move default config to backup file
-mv "${PICONFIG_CONFIG_TXT_FILE}" "${PICONFIG_CONFIG_BAK_FILE}"
+  # Step 3: Move default config to backup file
+  mv "${PICONFIG_CONFIG_TXT_FILE}" "${PICONFIG_CONFIG_BAK_FILE}"
 
-# Step 4: Concatenate files to config
-cat /tmp/config.txt /tmp/msos_config.txt > /tmp/config.new
+  # Step 4: Concatenate files to config
+  cat /tmp/config.txt /tmp/msos_config.txt > /tmp/config.new
 
-# Step 5: Copy new config to "/boot/config.txt"
-cp /tmp/config.new "${PICONFIG_CONFIG_TXT_FILE}"
+  # Step 5: Copy new config to "/boot/config.txt"
+  cp /tmp/config.new "${PICONFIG_CONFIG_TXT_FILE}"
 
-# Step 6: Cleanup
-rm -f /tmp/*config*
+  # Step 6: Cleanup
+  rm -f /tmp/*config*
+fi
 
 # Step 7: Copy default cmdline.txt to backup file
 cp "${PICONFIG_CMDLINE_TXT_FILE}" "${PICONFIG_CMDLINE_BAK_FILE}"
