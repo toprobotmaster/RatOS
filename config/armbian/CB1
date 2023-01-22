@@ -21,4 +21,5 @@ export DOWNLOAD_URL_IMAGE
 export BASE_DISTRO
 export BASE_IMAGE_RASPBIAN
 
-export MODULES="base,pkgupgrade(network,piconfig,klipper,node,is_req_preinstall,moonraker,mainsail,crowsnest,opiconfig,ratos(linear_movement_analysis,timelapse,klipperscreen,rpi_mcu,disable-services(hotspot),dfu-util),password-for-sudo),postrename"
+#export MODULES="base,pkgupgrade(network,piconfig,klipper,node,is_req_preinstall,moonraker,mainsail,crowsnest,opiconfig,ratos(linear_movement_analysis,timelapse,klipperscreen,rpi_mcu,disable-services(hotspot),dfu-util),password-for-sudo),postrename"
+export MODULES="base,pkgupgrade,armbian(mainsailos,klipper,moonraker,mainsail,timelapse,crowsnest,sonar)"
