@@ -5,8 +5,7 @@
 BASE_ARCH="arm64"
 
 # Image source
-#DOWNLOAD_URL_CHECKSUM="<GITHUB>CB1_Debian11_bullseye_minimal_kernel5.16_20221110.img.xz.sha256" but it doesn't exist...
-CHECKSUM="983afe44503aea63aa16016729bb93976a330125d2588e5d0bea47ca2ac18611"
+DOWNLOAD_URL_CHECKSUM="https://github.com/jscancella/RatOS/releases/download/cb1-checksum/CB1_Debian11_bullseye_Klipper_kernel5.16_20221110.img.sha256"
 DOWNLOAD_URL_IMAGE="https://github.com/bigtreetech/CB1/releases/download/V2.2.1/CB1_Debian11_bullseye_minimal_kernel5.16_20221110.img.xz"
 
 # export Variables
