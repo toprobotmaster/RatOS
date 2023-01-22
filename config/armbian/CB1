@@ -3,8 +3,6 @@
 # shellcheck enable=require-variable-braces
 
 BASE_ARCH="arm64"
-BASE_DISTRO="armbian"
-BASE_IMAGE_RASPBIAN="no"
 
 BASE_ADD_USER="yes"
 BASE_USER="pi"
@@ -18,8 +16,5 @@ DOWNLOAD_URL_IMAGE="https://github.com/bigtreetech/CB1/releases/download/V2.2.1/
 export BASE_ARCH
 export DOWNLOAD_URL_CHECKSUM
 export DOWNLOAD_URL_IMAGE
-export BASE_DISTRO
-export BASE_IMAGE_RASPBIAN
 
-#export MODULES="base,pkgupgrade(network,piconfig,klipper,node,is_req_preinstall,moonraker,mainsail,crowsnest,opiconfig,ratos(linear_movement_analysis,timelapse,klipperscreen,rpi_mcu,disable-services(hotspot),dfu-util),password-for-sudo),postrename"
-export MODULES="base,pkgupgrade,armbian(mainsailos,klipper,moonraker,mainsail,timelapse,crowsnest,sonar)"
+export MODULES="base,deb_namserver,pkgupgrade(network,piconfig,klipper,node,is_req_preinstall,moonraker,mainsail,crowsnest,opiconfig,ratos(linear_movement_analysis,timelapse,klipperscreen,rpi_mcu,disable-services(hotspot),dfu-util),password-for-sudo),postrename"
