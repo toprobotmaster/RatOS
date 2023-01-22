@@ -41,14 +41,14 @@ if [[ $BASE_DISTRO != "armbian" ]]; then
 
   # Step 6: Cleanup
   rm -f /tmp/*config*
+  
+  # Step 7: Copy default cmdline.txt to backup file
+  cp "${PICONFIG_CMDLINE_TXT_FILE}" "${PICONFIG_CMDLINE_BAK_FILE}"
+
+  # Step 8: Disable serial console to enable Hardware Serial (PL011).
+  echo_green "Disable Serial Linux console ..."
+  sed -i 's/console=serial0,115200 //' "${PICONFIG_CMDLINE_TXT_FILE}"
 fi
-
-# Step 7: Copy default cmdline.txt to backup file
-cp "${PICONFIG_CMDLINE_TXT_FILE}" "${PICONFIG_CMDLINE_BAK_FILE}"
-
-# Step 8: Disable serial console to enable Hardware Serial (PL011).
-echo_green "Disable Serial Linux console ..."
-sed -i 's/console=serial0,115200 //' "${PICONFIG_CMDLINE_TXT_FILE}"
 
 # Step 9: Disable bluetooth and related services
 echo_green "Disabling Bluetooth related services..."
