@@ -20,17 +20,21 @@ fi
 source /common.sh
 install_cleanup_trap
 
-# Step 1: Copy msos_config.txt
-echo_green "Copying temporary file ..."
+# Step 1: Copy 90-gpio-spi.rules
+echo_green "Copying 90-gpio-spi.rules..."
 unpack /filesystem/tmp /tmp root
 
-# Step 2: Disable bluetooth and related services
+# Step 2: add spi group
+groupadd -f --system spi
+usermod -a -G spi "${BASE_USER}"
+
+# Step 3: Disable bluetooth and related services
 echo_green "Disabling Bluetooth related services..."
 systemctl_if_exists disable hciuart.service
 systemctl_if_exists disable bluetooth.service
 systemctl_if_exists disable bluealsa.service
 
-# Step 3: Increase swapfile size
+# Step 4: Increase swapfile size
 if [[ -f "${PICONFIG_SWAP_CONF_FILE}" ]]; then
     echo_green "Increasing swap file size to ${PICONFIG_SWAP_SIZE} Mb. Limit to ${PICONFIG_SWAP_MAX} Mb"
     sed -i 's/^CONF_SWAPSIZE.*/'CONF_SWAPSIZE="${PICONFIG_SWAP_SIZE}"'/' "${PICONFIG_SWAP_CONF_FILE}"
