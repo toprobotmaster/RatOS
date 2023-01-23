@@ -22,7 +22,7 @@ install_cleanup_trap
 
 # Step 1: Copy 90-gpio-spi.rules
 echo_green "Copying 90-gpio-spi.rules..."
-unpack /filesystem/tmp /tmp root
+unpack /filesystem/root /
 
 # Step 2: add spi group
 groupadd -f --system spi
