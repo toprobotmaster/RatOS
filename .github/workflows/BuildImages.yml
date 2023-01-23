@@ -4,6 +4,7 @@ on:
     branches:
       - "master"
       - "develop"
+      - "v2.x"
     paths:
       - "src/modules/**"
       - "src/build_dist"
