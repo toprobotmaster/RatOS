@@ -42,5 +42,4 @@ if [[ -f "${PICONFIG_SWAP_CONF_FILE}" ]]; then
 fi
 
 # install modem manager so that later ratos-configuration script doesn't fail
-#install wpa supplicant so wifi works
-check_install_pkgs modemmanager wpa_supplicant
+check_install_pkgs modemmanager
