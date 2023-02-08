@@ -43,4 +43,5 @@ fi
 
 # install modem manager so that later ratos-configuration script doesn't fail
 # install avahi so ratos.local works
-check_install_pkgs modemmanager avahi
+#install dhcpcd5 as that is required by the hotspot
+check_install_pkgs modemmanager avahi dhcpcd5
