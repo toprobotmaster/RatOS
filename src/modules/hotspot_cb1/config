@@ -1,2 +1,2 @@
-[[ -n "$CREATE_AP_REPO_SHIP" ]] || CREATE_AP_REPO_SHIP="https://github.com/oblique/create_ap"
-[[ -n "$CREATE_AP_REPO_BRANCH" ]] || CREATE_AP_REPO_BRANCH="master"
+[ -n "$CREATE_AP_REPO_SHIP" ] || CREATE_AP_REPO_SHIP=https://github.com/oblique/create_ap
+[ -n "$CREATE_AP_REPO_BRANCH" ] || CREATE_AP_REPO_BRANCH=master
