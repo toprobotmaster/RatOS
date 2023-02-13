@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+#### install ratos wifi hotspot on cb1
+####
+
+# shellcheck enable=requires-variable-braces
+
+# Error handling
+set -Ee
+
+# shellcheck disable=SC1091
+source /common.sh
+install_cleanup_trap
+
+echo_green "Install ratos hotspot tool dependencies..."
+check_install_pkgs dnsmasq
+
+echo_green "Downloading ratos hotspot tool..."
+gitclone CREATE_AP_REPO create_ap
+
+echo_green "Installing ratos hotspot tool..."
+pushd "/home/${BASE_USER}/create_ap" &> /dev/null || exit 1
+make install
+
+#edit the config
+unpack /filesystem/root /
+
+systemctl enable create_ap
+popd &> /dev/null || exit 1
+
+echo_green "Installing ratos hotspot tool ... DONE!"
