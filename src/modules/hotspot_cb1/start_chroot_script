@@ -14,7 +14,7 @@ check_install_pkgs dnsmasq
 
 echo_green "Downloading ratos hotspot tool..."
 pushd "/home/${BASE_USER}"
-gitclone CREATE_AP_REPO create_ap
+gitclone HOTSPOT_CB1 create_ap
 
 echo_green "Installing ratos hotspot tool..."
 pushd "/home/${BASE_USER}/create_ap"
