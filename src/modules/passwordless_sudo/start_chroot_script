@@ -12,4 +12,4 @@ set -xe
 source /common.sh
 install_cleanup_trap
 
-echo -e "${BASE_USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+echo -e "${BASE_USER} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/010_pi-nopasswd
