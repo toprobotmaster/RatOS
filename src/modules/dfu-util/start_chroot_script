@@ -13,6 +13,7 @@ apt-get -y install libusb-1.0-0-dev autoconf pandoc
 echo_green "Cloning and building DFU-util"
 git clone git://git.code.sf.net/p/dfu-util/dfu-util
 pushd /home/${BASE_USER}/dfu-util
+touch aclocal.m4t
 ./autogen.sh
 ./configure
 make install
