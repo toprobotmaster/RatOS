@@ -10,8 +10,8 @@ BASE_USER="pi"
 BASE_USER_PASSWORD="raspberry"
 
 # Image source
-DOWNLOAD_URL_CHECKSUM="https://github.com/mainsail-crew/armbian-builds/releases/download/20230209-1451/armbian-orangepi3_lts.img.sha256"
-DOWNLOAD_URL_IMAGE="https://github.com/mainsail-crew/armbian-builds/releases/download/20230209-1451/armbian-orangepi3_lts.img.xz"
+DOWNLOAD_URL_CHECKSUM="https://armbian.chi.auroradev.org/dl/orangepi3-lts/archive/Armbian_22.11.1_Orangepi3-lts_bullseye_current_5.15.80.img.xz.sha"
+DOWNLOAD_URL_IMAGE="https://armbian.chi.auroradev.org/dl/orangepi3-lts/archive/Armbian_22.11.1_Orangepi3-lts_bullseye_current_5.15.80.img.xz"
 
 # export Variables
 export BASE_ARCH
